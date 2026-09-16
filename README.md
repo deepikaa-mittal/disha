@@ -1,15 +1,14 @@
-# disha
-NeuroPath
+Disha
 
 Career discovery that measures what you're good at without stress — then teaches you the rest.
 
-NeuroPath connects a VR career-exploration game with Tootler, an ed-tech platform that generates personalized articles and quizzes from a user's interests. Together they form a closed loop: play a career scenario, detect both performance and emotional state via EEG, study the exact gaps that were flagged, prove mastery with a quiz, and unlock the next scenario.
+Disha connects a VR career-exploration game with Tootler, an ed-tech platform that generates personalized articles and quizzes from a user's interests. Together they form a closed loop: play a career scenario, detect both performance and emotional state via EEG, study the exact gaps that were flagged, prove mastery with a quiz, and unlock the next scenario.
 
 Why
 
 Most career-aptitude tools measure one thing: how well you performed. They miss a second, arguably more important signal — how the person felt while performing. Someone can ace a legal-reasoning simulation while their nervous system is quietly screaming, and someone else can fumble a STEM puzzle while completely calm and engaged. The first is a fragile skill under pressure; the second is a latent strength worth developing.
 
-NeuroPath captures both signals simultaneously and treats "high performance + low stress" as the real marker of genuine career fit — not performance alone.
+Disha captures both signals simultaneously and treats "high performance + low stress" as the real marker of genuine career fit — not performance alone.
 
 How It Works
    ┌─────────┐     ┌──────────────────┐     ┌─────────┐     ┌────────┐
@@ -46,7 +45,7 @@ Roadmap (draft)
  End-to-end pilot with a single career track (e.g. law)
 Disclaimer
 
-EEG-based emotional-state inference is probabilistic, not diagnostic. NeuroPath is a career-exploration aid, not a psychological or medical assessment tool.
+EEG-based emotional-state inference is probabilistic, not diagnostic. Disha is a career-exploration aid, not a psychological or medical assessment tool.
 
 License
 
