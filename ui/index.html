@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DISHA — Neural Performance & Career Exploration Platform</title>
+  <meta name="description" content="Decode your performance. Discover your direction. DISHA combines EEG neural analytics with gameplay performance for experiential career exploration.">
+  
+  <!-- Google Fonts: Outfit, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Plotly.js -->
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+
+  <!-- DISHA Design System Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Ambient Subtle Glow -->
+<div class="ambient-glow"></div>
+
+<!-- ==========================================================================
+     SECTION A: EDITORIAL LANDING PAGE (CloudGuardian Inspired)
+     ========================================================================== -->
+<div id="landing-view">
+
+  <!-- Floating Centered Pill Navigation Bar -->
+  <div class="floating-nav-wrapper">
+    <nav class="floating-nav">
+      <div class="brand-disha">
+        <div class="brand-disha-logo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <span>DISHA</span>
+      </div>
+
+      <div class="pill-nav-links">
+        <a class="pill-nav-link" data-anchor="how-it-works">How It Works</a>
+        <a class="pill-nav-link" data-anchor="experience">Experience</a>
+        <a class="pill-nav-link" data-anchor="analytics">Analytics</a>
+        <a class="pill-nav-link" data-anchor="career-paths">Career Paths</a>
+        <a class="pill-nav-link" data-anchor="research">Research</a>
+      </div>
+
+      <div class="pill-nav-actions">
+        <button class="theme-toggle-btn" title="Toggle Light/Dark Theme">🌙</button>
+        <button class="btn-primary js-enter-disha" data-target-tab="overview">Enter DISHA →</button>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="hero-pill-badge">
+      <span>●</span> NEURAL INTELLIGENCE · CAREER EXPLORATION
+    </div>
+
+    <h1 class="hero-title">
+      Understand how you perform.<br>
+      <span class="accent-underline">Discover where you fit.</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      DISHA combines EEG-based neural analytics with gameplay performance to understand how you respond, focus, adapt, and perform — then turns those insights into meaningful career exploration.
+    </p>
+
+    <div class="hero-cta-group">
+      <button class="btn-primary js-enter-disha" data-target-tab="overview" style="padding:10px 22px; font-size:13.5px;">
+        Start Your Experience →
+      </button>
+      <a href="#how-it-works" class="btn-secondary" style="padding:10px 20px; font-size:13.5px;">
+        Explore How It Works
+      </a>
+    </div>
+
+    <div class="hero-credibility-pills">
+      <span><span class="hero-cred-dot">●</span> EEG-powered analytics</span>
+      <span><span class="hero-cred-dot">●</span> Real-time performance insights</span>
+      <span><span class="hero-cred-dot">●</span> Career exploration through gameplay</span>
+    </div>
+
+    <!-- Product Preview Container Under Hero -->
+    <div class="hero-preview-container" id="experience">
+      <div class="preview-window-bar">
+        <div class="window-dots">
+          <div class="window-dot"></div>
+          <div class="window-dot"></div>
+          <div class="window-dot"></div>
+        </div>
+        <span>DISHA Analytics Console · Session #08 Preview</span>
+        <span style="color:var(--accent-teal); font-weight:600;">● Engine Ready</span>
+      </div>
+
+      <div class="preview-grid">
+        <!-- Left preview: Neural vs Game Performance Telemetry -->
+        <div>
+          <div style="font-size:12.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.8px; color:var(--text-muted); margin-bottom:10px;">
+            Synchronized Neural Engagement vs Gameplay Score
+          </div>
+          <div style="height:210px; background:var(--bg-surface-subtle); border-radius:8px; border:1px solid var(--border-subtle); display:flex; flex-direction:column; justify-content:center; padding:18px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:12px;">
+              <div>
+                <div style="font-size:12px; color:var(--text-muted);">Neural State</div>
+                <div style="font-size:20px; font-weight:700; color:var(--accent-teal);">Focused + Adaptive</div>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-size:12px; color:var(--text-muted);">Current Score</div>
+                <div class="mono" style="font-size:20px; font-weight:700; color:var(--accent-blue);">8,840 pts</div>
+              </div>
+            </div>
+            <!-- Mini dual wave representation -->
+            <svg viewBox="0 0 400 70" style="width:100%; height:70px;">
+              <path d="M 0 35 Q 40 10, 80 30 T 160 25 T 240 45 T 320 20 T 400 30" fill="none" stroke="var(--accent-teal)" stroke-width="2.5" />
+              <path d="M 0 50 Q 50 40, 100 35 T 200 30 T 300 20 T 400 15" fill="none" stroke="var(--accent-blue)" stroke-width="2.2" stroke-dasharray="4,4" />
+            </svg>
+            <div style="display:flex; justify-content:space-between; font-size:12px; color:var(--text-secondary); margin-top:10px;">
+              <span style="color:var(--accent-teal); font-weight:600;">— Neural Engagement (86%)</span>
+              <span style="color:var(--accent-blue); font-weight:600;">--- Gameplay Score Trajectory</span>
+              <span class="mono">Latency: 0.368 ms</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right preview: Career Signals Preview -->
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div style="font-size:12.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.8px; color:var(--text-muted);">
+            Observed Career Signals
+          </div>
+          <div style="background:var(--bg-surface-subtle); border-radius:8px; border:1px solid var(--border-subtle); padding:16px;">
+            <div style="font-size:15px; font-weight:700; color:var(--text-primary);">Analytical Problem Solving</div>
+            <div style="font-size:12.5px; color:var(--accent-teal); font-weight:700; margin-top:3px;">88% Profile Alignment</div>
+            <p style="font-size:13px; color:var(--text-secondary); margin-top:8px; line-height:1.5;">
+              High decision accuracy and sustained alpha-band fronto-parietal coherence under multi-step obstacles.
+            </p>
+          </div>
+          <button class="btn-primary js-enter-disha" data-target-tab="career-explorer" style="width:100%; justify-content:center; padding:11px 20px; font-size:14px;">
+            Explore Complete Profile →
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 4-Step Product Story Pipeline Section -->
+  <section class="story-pipeline-section" id="how-it-works">
+    <div class="section-eyebrow">The DISHA Methodology</div>
+    <h2 class="section-title-editorial">From neural signals to direction.</h2>
+
+    <div class="story-pipeline-grid">
+      <div class="story-step-card">
+        <div class="story-step-num">01 / SENSE</div>
+        <div class="story-step-action">EEG Signals</div>
+        <p class="story-step-desc">
+          Continuous feature extraction across frequency spectra, covariance matrices, and eigenvalues from 10-20 montage sensors.
+        </p>
+      </div>
+
+      <div class="story-step-card">
+        <div class="story-step-num">02 / INTERPRET</div>
+        <div class="story-step-action">Cognitive State</div>
+        <p class="story-step-desc">
+          Evaluated against ground-truth datasets to quantify valence, sympathetic arousal, focus stability, and stress response.
+        </p>
+      </div>
+
+      <div class="story-step-card">
+        <div class="story-step-num">03 / PERFORM</div>
+        <div class="story-step-action">Gameplay Behaviour</div>
+        <p class="story-step-desc">
+          Reaction time distributions, decision variance, and error recalibration recorded during immersive gameplay tasks.
+        </p>
+      </div>
+
+      <div class="story-step-card">
+        <div class="story-step-num">04 / DISCOVER</div>
+        <div class="story-step-action">Career Exploration</div>
+        <p class="story-step-desc">
+          Correlating observed neural and gameplay traits with real-world professional environments and activity types.
+        </p>
+      </div>
+    </div>
+
+    <div style="margin-top:40px;">
+      <button class="btn-primary js-enter-disha" data-target-tab="overview" style="padding:10px 24px; font-size:13.5px;">
+        Launch DISHA Dashboard →
+      </button>
+    </div>
+  </section>
+
+</div> <!-- End #landing-view -->
+
+
+<!-- ==========================================================================
+     SECTION B: DISHA APP DASHBOARD (10 Analytical Sections)
+     ========================================================================== -->
+<div id="app-view">
+
+  <!-- Left Narrow Sleek Sidebar -->
+  <aside class="disha-sidebar" id="disha-sidebar">
+    <div class="disha-sidebar-header">
+      <div class="disha-brand-group" id="sidebar-brand-btn" title="Return to Landing Page">
+        <div class="brand-disha-logo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <div class="disha-brand-text">
+          <div class="disha-brand-title">DISHA</div>
+          <div class="disha-brand-subtitle">Performance Intelligence</div>
+        </div>
+      </div>
+      <button class="theme-toggle-btn" id="disha-sidebar-toggle" style="width:26px; height:26px; border:none; background:transparent;" title="Collapse Sidebar">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>
+      </button>
+    </div>
+
+    <nav class="disha-sidebar-nav">
+      <div class="sidebar-category-label">Intelligence</div>
+
+      <div class="disha-nav-item active" data-tab="overview">
+        <span class="disha-nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg></span>
+        <span class="disha-nav-label">Overview</span>
+      </div>
+
+      <div class="disha-nav-item" data-tab="live-session">
+        <span class="disha-nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg></span>
+        <span class="disha-nav-label">Live Session</span>
+      </div>
+
+      <div class="disha-nav-item" data-tab="eeg-signals">
+        <span class="disha-nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h3l3-7 4 14 3-7h7"/></svg></span>
+        <span class="disha-nav-label">EEG Signals</span>
+      </div>
+
+      <div class="disha-nav-item" data-tab="emotion-stress">
+        <span class="disha-nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+        <span class="disha-nav-label">Emotion & Stress</span>
+      </div>
+
+      <div class="sidebar-category-label" style="margin-top:10px;">Gaming & Performance</div>
+
+      <div class="disha-nav-item" data-tab="game-performance">
+        <span class="disha-nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4m-2-2v4m7-2h.01m3 0h.01"/></svg></span>
+        <span class="disha-nav-label">Game Performance</span>
+      </div>
+
+      <div class="disha-nav-item" data-tab="performance-profile">
+        <span class="disha-nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+        <span class="disha-nav-label">Performance Profile</span>
+      </div>
+
+      <div class="disha-nav-item" data-tab="career-explorer">
+        <span class="disha-nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></span>
+        <span class="disha-nav-label">Career Explorer</span>
+      </div>
+
+      <div class="sidebar-category-label" style="margin-top:10px;">Research Validation</div>
+
+      <div class="disha-nav-item" data-tab="model-insights">
+        <span class="disha-nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></span>
+        <span class="disha-nav-label">Model Insights</span>
+      </div>
+
+      <div class="disha-nav-item" data-tab="dataset">
+        <span class="disha-nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg></span>
+        <span class="disha-nav-label">Research Dataset</span>
+      </div>
+
+      <div class="disha-nav-item" data-tab="research-export">
+        <span class="disha-nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg></span>
+        <span class="disha-nav-label">Research Export</span>
+      </div>
+    </nav>
+
+    <div class="disha-sidebar-footer">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <span class="status-dot-subtle"></span>
+        <span class="mono" style="font-size:12.5px; font-weight:600;">#DSH-8821</span>
+      </div>
+      <button class="theme-toggle-btn" title="Toggle Theme" style="width:30px; height:30px; font-size:13px;">🌙</button>
+    </div>
+  </aside>
+
+  <!-- Main Dashboard Content -->
+  <div class="disha-main">
+
+    <!-- Topbar Header -->
+    <header class="disha-topbar">
+      <div class="disha-topbar-left">
+        <span class="disha-view-title" id="dash-view-title">Overview</span>
+        <span class="disha-view-desc" id="dash-view-desc">Neural state summary and latest gameplay performance telemetry</span>
+      </div>
+
+      <div class="disha-topbar-right">
+        <span class="status-pill"><span class="status-dot-subtle"></span> Analysis Engine Ready</span>
+        <span class="status-pill">Research Dataset · 2,132 Samples</span>
+        <span class="status-pill">Signal Source · Simulation</span>
+        <button class="theme-toggle-btn" title="Toggle Theme">🌙</button>
+        <button class="btn-secondary" onclick="document.getElementById('sidebar-brand-btn').click();" style="font-size:13px; font-weight:600; padding:6px 16px;">
+          Exit to Home
+        </button>
+      </div>
+    </header>
+
+    <!-- Content Scrollable Body -->
+    <main class="disha-content-scroll">
+
+      <!-- ====================================================================
+           TAB 1: OVERVIEW PAGE
+           ==================================================================== -->
+      <section class="dash-page-view active" id="dash-overview">
+        <!-- Story-driven Greeting Banner -->
+        <div class="overview-greeting-banner">
+          <div>
+            <h2 class="greeting-text">Good morning, Player</h2>
+            <p class="greeting-sub">Here is what DISHA learned from your latest gameplay telemetry session.</p>
+          </div>
+          <div class="primary-insight-badge">
+            <div style="font-size:12px; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.8px;">Current Performance State</div>
+            <div class="insight-state-label">Focused + Adaptive</div>
+            <div class="insight-conf">Neural Confidence: 87.4% · Session #08</div>
+          </div>
+        </div>
+
+        <!-- Latest Session Summary Card -->
+        <div class="card-clean">
+          <div class="card-clean-header">
+            <div>
+              <h3 class="card-clean-title">Latest Session Summary (Session #08)</h3>
+              <p class="card-clean-subtitle">Synchronized 18-minute session telemetry</p>
+            </div>
+            <span style="background:var(--accent-teal-subtle); color:var(--accent-teal); font-weight:700; padding:4px 12px; border-radius:999px; font-size:12px;">ACTIVE</span>
+          </div>
+
+          <div class="session-metrics-grid">
+            <div class="session-metric-cell">
+              <div class="session-metric-title">Duration</div>
+              <div class="session-metric-val">18m 24s</div>
+            </div>
+            <div class="session-metric-cell">
+              <div class="session-metric-title">Game Score</div>
+              <div class="session-metric-val">8,840 pts</div>
+            </div>
+            <div class="session-metric-cell">
+              <div class="session-metric-title">Reaction Time</div>
+              <div class="session-metric-val">284 ms</div>
+            </div>
+            <div class="session-metric-cell">
+              <div class="session-metric-title">Decision Accuracy</div>
+              <div class="session-metric-val">94.2%</div>
+            </div>
+            <div class="session-metric-cell">
+              <div class="session-metric-title">Stress Response</div>
+              <div class="session-metric-val" style="color:var(--state-positive);">Low (28/100)</div>
+            </div>
+            <div class="session-metric-cell">
+              <div class="session-metric-title">Neural Stability</div>
+              <div class="session-metric-val">91.5%</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Synchronized Dual Timeline Preview & Profile Radar -->
+        <div style="display:grid; grid-template-columns: 1.5fr 1fr; gap:20px;">
+          <div class="card-clean">
+            <div class="card-clean-header">
+              <div>
+                <h3 class="card-clean-title">Neural Activity vs Game Performance</h3>
+                <p class="card-clean-subtitle">Synchronized timelines: Neural engagement (teal) & Game score (blue)</p>
+              </div>
+            </div>
+            <div class="dual-timeline-container" id="overview-telemetry-chart" style="height:320px;"></div>
+          </div>
+
+          <div class="card-clean">
+            <div class="card-clean-header">
+              <div>
+                <h3 class="card-clean-title">Performance Dimension Profile</h3>
+                <p class="card-clean-subtitle">Derived from model-supported features</p>
+              </div>
+            </div>
+            <div id="overview-profile-radar" style="height:320px;"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           TAB 2: LIVE SESSION
+           ==================================================================== -->
+      <section class="dash-page-view" id="dash-live-session">
+        <div class="card-clean">
+          <div class="card-clean-header">
+            <div>
+              <h3 class="card-clean-title">Live Session Stream</h3>
+              <p class="card-clean-subtitle">Simulated live feed linking raw EEG features to real-time classification</p>
+            </div>
+            <span style="background:var(--state-positive-bg); color:var(--state-positive); padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700;">● STREAMING</span>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:14px; margin-bottom:18px;">
+            <div class="session-metric-cell">
+              <div class="session-metric-title">Live Engagement</div>
+              <div class="session-metric-val" id="live-eng-val" style="color:var(--accent-teal);">88%</div>
+            </div>
+            <div class="session-metric-cell">
+              <div class="session-metric-title">Ground-Truth Label</div>
+              <div class="session-metric-val">POSITIVE</div>
+            </div>
+            <div class="session-metric-cell">
+              <div class="session-metric-title">Sample Buffer</div>
+              <div class="session-metric-val">#42 / 2,132</div>
+            </div>
+            <div class="session-metric-cell">
+              <div class="session-metric-title">Inference Speed</div>
+              <div class="session-metric-val">0.368 ms</div>
+            </div>
+          </div>
+
+          <div style="padding:14px; background:var(--bg-surface-subtle); border-radius:8px; border:1px solid var(--border-subtle); font-size:12px; color:var(--text-secondary);">
+            The live session engine simulates synchronized continuous EEG epochs from <code>emotions.csv</code> through the Random Forest inference model, calculating valence, focus, and stress adaptation scores on every epoch cycle.
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           TAB 3: EEG SIGNALS
+           ==================================================================== -->
+      <section class="dash-page-view" id="dash-eeg-signals">
+        <div style="display:grid; grid-template-columns: 1.6fr 1fr; gap:24px;">
+          <!-- Multi-Channel Waveforms -->
+          <div class="card-clean">
+            <div class="card-clean-header">
+              <div>
+                <h3 class="card-clean-title">Neural Activity (Multi-Channel Traces)</h3>
+                <p class="card-clean-subtitle">Standardized 10-20 channels • Real-time telemetry simulation</p>
+              </div>
+              <span class="status-pill" style="font-size:12px; font-weight:700;">FEATURE-DERIVED</span>
+            </div>
+
+            <div style="width:100%; height:330px; background:var(--canvas-bg); border:1px solid var(--border-subtle); border-radius:10px; overflow:hidden;">
+              <canvas id="disha-eeg-canvas" style="width:100%; height:100%;"></canvas>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:14px;">
+              <div style="display:flex; gap:10px;">
+                <button class="btn-secondary" id="wave-toggle-btn" style="padding:6px 16px; font-size:13.5px; font-weight:600;">⏸ Pause</button>
+                <button class="btn-secondary" id="wave-reset-btn" style="padding:6px 16px; font-size:13.5px; font-weight:600;">↺ Reset</button>
+              </div>
+              <div style="display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text-secondary);">
+                <span style="font-weight:600;">Playback Speed:</span>
+                <select id="wave-speed-select" style="background:var(--bg-surface-subtle); border:1px solid var(--border-subtle); border-radius:6px; padding:4px 10px; font-size:13px; font-weight:600; color:var(--text-primary);">
+                  <option value="0.5">0.5x</option>
+                  <option value="1.0" selected>1.0x</option>
+                  <option value="2.0">2.0x</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cranial 10-20 Electrode Map -->
+          <div class="card-clean">
+            <div class="card-clean-header">
+              <div>
+                <h3 class="card-clean-title">10-20 Cranial Electrode Map</h3>
+                <p class="card-clean-subtitle">Click any electrode node to inspect feature details</p>
+              </div>
+            </div>
+            <div style="width:100%; height:290px; display:flex; align-items:center; justify-content:center;">
+              <svg id="disha-brain-svg" viewBox="0 0 100 100" style="width:100%; max-width:300px; height:280px;"></svg>
+            </div>
+            <div style="font-size:12.5px; color:var(--text-muted); text-align:center; margin-top:8px; line-height:1.4;">
+              Interactive channel inspection — Click any node (e.g. Fp1, Pz, Cz) to view spectral band power.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           TAB 4: EMOTION & STRESS
+           ==================================================================== -->
+      <section class="dash-page-view" id="dash-emotion-stress">
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:24px;">
+          <!-- Emotion Donut -->
+          <div class="card-clean">
+            <div class="card-clean-header">
+              <div>
+                <h3 class="card-clean-title">Ground-Truth Category Distribution</h3>
+                <p class="card-clean-subtitle">3 balanced research classes: POSITIVE, NEGATIVE, NEUTRAL</p>
+              </div>
+            </div>
+            <div id="emotion-donut-chart" style="height:270px;"></div>
+          </div>
+
+          <!-- Clean Stress Gauge -->
+          <div class="card-clean">
+            <div class="card-clean-header">
+              <div>
+                <h3 class="card-clean-title">Sympathetic Tone Stress Gauge</h3>
+                <p class="card-clean-subtitle">0 — 100 psychological stress score</p>
+              </div>
+            </div>
+            <div style="display:flex; flex-direction:column; align-items:center; padding:12px 0;">
+              <svg id="clean-stress-gauge-svg" viewBox="0 0 220 105" style="width:240px; height:115px;"></svg>
+              <div class="mono" id="gauge-score-num" style="font-size:44px; font-weight:800; color:var(--text-primary); margin-top:-14px; letter-spacing:-0.03em;">32</div>
+              <div id="gauge-status-label" style="font-size:13px; font-weight:700; text-transform:uppercase; padding:4px 14px; border-radius:999px; margin-top:2px; letter-spacing:0.5px;">Low Stress (Stable Baseline)</div>
+              <div style="font-size:12.5px; color:var(--text-muted); margin-top:6px; text-align:center;">Frontal Alpha Asymmetry (FAA: +0.42) • Beta/Theta Ratio (0.28)</div>
+            </div>
+
+            <!-- Supporting derived metrics -->
+            <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; margin-top:14px;">
+              <div class="session-metric-cell">
+                <div class="session-metric-title">Relaxation Index</div>
+                <div class="session-metric-val" style="color:var(--state-positive);">76 <span style="font-size:14px; font-weight:500; color:var(--text-muted);">/ 100</span></div>
+                <div style="font-size:12px; color:var(--text-muted); margin-top:3px;">Alpha Dominance</div>
+              </div>
+              <div class="session-metric-cell">
+                <div class="session-metric-title">Focus Index</div>
+                <div class="session-metric-val" style="color:var(--accent-teal);">84 <span style="font-size:14px; font-weight:500; color:var(--text-muted);">/ 100</span></div>
+                <div style="font-size:12px; color:var(--text-muted); margin-top:3px;">Frontal Coherence</div>
+              </div>
+              <div class="session-metric-cell">
+                <div class="session-metric-title">Cognitive Load</div>
+                <div class="session-metric-val" style="color:var(--state-neutral);">32 <span style="font-size:14px; font-weight:500; color:var(--text-muted);">/ 100</span></div>
+                <div style="font-size:12px; color:var(--text-muted); margin-top:3px;">Low Fatigue State</div>
+              </div>
+            </div>
+
+            <div style="font-size:12px; color:var(--text-muted); text-align:center; margin-top:12px; line-height:1.4;">
+              * Continuous inference derived from 2,548 EEG spectral band features across 2,132 recorded epochs. Research use only.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           TAB 5: GAME PERFORMANCE
+           ==================================================================== -->
+      <section class="dash-page-view" id="dash-game-performance">
+        <div class="card-clean">
+          <div class="card-clean-header">
+            <div>
+              <h3 class="card-clean-title">Neural Activity vs Game Performance (Synchronized Dual Timeline)</h3>
+              <p class="card-clean-subtitle">Observe exactly how your neural focus and stress level correlated with score spikes</p>
+            </div>
+          </div>
+          <div class="dual-timeline-container" id="game-dual-timeline-chart" style="height:320px;"></div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           TAB 6: PERFORMANCE PROFILE
+           ==================================================================== -->
+      <section class="dash-page-view" id="dash-performance-profile">
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px;">
+          <div class="card-clean">
+            <div class="card-clean-header">
+              <div>
+                <h3 class="card-clean-title">Multidimensional Cognitive Profile</h3>
+                <p class="card-clean-subtitle">Derived from model-supported EEG features during gameplay</p>
+              </div>
+            </div>
+            <div id="profile-tab-radar" style="height:300px;"></div>
+          </div>
+
+          <div class="card-clean">
+            <div class="card-clean-header">
+              <div>
+                <h3 class="card-clean-title">Profile Dimensions & Confidence</h3>
+                <p class="card-clean-subtitle">Signal attribution across performance metrics</p>
+              </div>
+            </div>
+
+            <div style="display:flex; flex-direction:column; gap:14px; margin-top:10px;">
+              <div class="session-metric-cell">
+                <div style="display:flex; justify-content:space-between;">
+                  <strong style="color:var(--text-primary); font-size:15px;">Focus Stability (86 / 100)</strong>
+                  <span style="color:var(--accent-teal); font-weight:700; font-size:13px;">High Confidence</span>
+                </div>
+                <p style="font-size:13.5px; color:var(--text-secondary); margin-top:5px; line-height:1.5;">
+                  Sustained frontal alpha coherence throughout repetitive obstacle segments.
+                </p>
+              </div>
+
+              <div class="session-metric-cell">
+                <div style="display:flex; justify-content:space-between;">
+                  <strong style="color:var(--text-primary); font-size:15px;">Cognitive Adaptability (82 / 100)</strong>
+                  <span style="color:var(--accent-teal); font-weight:700; font-size:13px;">High Confidence</span>
+                </div>
+                <p style="font-size:13.5px; color:var(--text-secondary); margin-top:5px; line-height:1.5;">
+                  Sub-350ms recovery time following sudden rule shifts and challenge bursts.
+                </p>
+              </div>
+
+              <div class="session-metric-cell">
+                <div style="display:flex; justify-content:space-between;">
+                  <strong style="color:var(--text-primary); font-size:15px;">Stress Regulation (78 / 100)</strong>
+                  <span style="color:var(--accent-blue); font-weight:700; font-size:13px;">Moderate Confidence</span>
+                </div>
+                <p style="font-size:13.5px; color:var(--text-secondary); margin-top:5px; line-height:1.5;">
+                  Controlled beta power surge during sudden high-speed events without performance collapse.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           TAB 7: CAREER EXPLORER
+           ==================================================================== -->
+      <section class="dash-page-view" id="dash-career-explorer">
+        <div class="card-clean" style="margin-bottom:6px;">
+          <h3 class="card-clean-title" style="font-size:17px;">Career Explorer</h3>
+          <p class="card-clean-subtitle">
+            DISHA identifies career environments and activity types that can be explored based on your observed gameplay and neural-performance profile. These are exploration categories, not deterministic recommendations.
+          </p>
+        </div>
+
+        <!-- Career Environment Cards -->
+        <div class="career-env-grid" id="career-cards-container"></div>
+
+        <!-- Branching Career Path Visualization -->
+        <div class="card-clean" style="margin-top:14px;">
+          <div class="card-clean-header">
+            <div>
+              <h3 class="card-clean-title">Branching Career Path Trajectories</h3>
+              <p class="card-clean-subtitle">Exploration pathways branching from observed performance traits</p>
+            </div>
+          </div>
+          <div class="branching-tree-box" id="branching-tree-container"></div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           TAB 8: MODEL INSIGHTS & LIMITATIONS
+           ==================================================================== -->
+      <section class="dash-page-view" id="dash-model-insights">
+        <!-- 3x3 Confusion Matrix & Multi-Model Benchmarks -->
+        <div style="display:grid; grid-template-columns: 1fr 1.3fr; gap:20px;">
+          <div class="card-clean">
+            <div class="card-clean-header">
+              <div>
+                <h3 class="card-clean-title">Test-Set Confusion Matrix</h3>
+                <p class="card-clean-subtitle">Evaluated on 427 holdout samples (98.83% Accuracy)</p>
+              </div>
+            </div>
+            <div id="insights-cm-chart" style="height:250px;"></div>
+          </div>
+
+          <div class="card-clean">
+            <div class="card-clean-header">
+              <div>
+                <h3 class="card-clean-title">Multi-Model Benchmark Comparison</h3>
+                <p class="card-clean-subtitle">Comparative evaluation across 4 algorithms on emotions.csv</p>
+              </div>
+            </div>
+            <div id="insights-comparison-chart" style="height:250px;"></div>
+          </div>
+        </div>
+
+        <!-- Model Limitations Section -->
+        <div class="card-clean">
+          <div class="card-clean-header">
+            <div>
+              <h3 class="card-clean-title">Model Limitations & Research Bounds</h3>
+              <p class="card-clean-subtitle">Rigorous scientific documentation of dataset and model boundaries</p>
+            </div>
+            <span class="status-pill" style="color:var(--stress-mod);">DISCLOSURE</span>
+          </div>
+
+          <div class="limitations-grid">
+            <div class="limitation-card">
+              <div class="limitation-title">Dataset Scope</div>
+              <p>Derived from 2,132 laboratory epochs across controlled stimulus protocols. Findings represent experiential associations and require multi-cohort longitudinal study.</p>
+            </div>
+            <div class="limitation-card">
+              <div class="limitation-title">Feature Derivation</div>
+              <p>Signals are feature-derived reconstructions from extracted FFT spectra, covariance matrices, and eigenvalues, rather than direct raw clinical microvolt telemetry.</p>
+            </div>
+            <div class="limitation-card">
+              <div class="limitation-title">Career Aptitude Boundary</div>
+              <p>EEG and gameplay metrics observe real-time performance style and stress pacing. They do NOT measure innate personality, IQ, or deterministic occupational aptitude.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Top Features Chart -->
+        <div class="card-clean">
+          <div class="card-clean-header">
+            <div>
+              <h3 class="card-clean-title">Top 15 Predictive EEG Features</h3>
+              <p class="card-clean-subtitle">Model-weighted Gini importance coefficients</p>
+            </div>
+          </div>
+          <div id="insights-features-chart" style="height:260px;"></div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           TAB 9: RESEARCH DATASET EXPLORER
+           ==================================================================== -->
+      <section class="dash-page-view" id="dash-dataset">
+        <div class="card-clean">
+          <div class="card-clean-header">
+            <div>
+              <h3 class="card-clean-title">Research Dataset Inspection Console</h3>
+              <p class="card-clean-subtitle">Searchable, paginated 2,548-feature dataset with 1-click live inference</p>
+            </div>
+          </div>
+
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:14px; margin-bottom:16px; flex-wrap:wrap;">
+            <input type="text" id="dataset-search-input" placeholder="Search by sample ID (e.g. 42)..." style="background:var(--bg-surface-subtle); border:1px solid var(--border-subtle); color:var(--text-primary); padding:8px 14px; border-radius:6px; font-size:13.5px; outline:none; min-width:220px;">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <span style="font-size:13px; font-weight:600; color:var(--text-secondary);">Columns:</span>
+              <select id="dataset-col-picker" multiple style="height:36px; background:var(--bg-surface-subtle); border:1px solid var(--border-subtle); color:var(--text-primary); border-radius:6px; font-size:12.5px; padding:3px 8px;">
+                <option value="mean_0_a" selected>mean_0_a</option>
+                <option value="mean_1_a" selected>mean_1_a</option>
+                <option value="mean_2_a" selected>mean_2_a</option>
+                <option value="mean_3_a" selected>mean_3_a</option>
+                <option value="stddev_0_a" selected>stddev_0_a</option>
+                <option value="fft_0_b" selected>fft_0_b</option>
+                <option value="fft_1_b" selected>fft_1_b</option>
+                <option value="entropy0_a" selected>entropy0_a</option>
+              </select>
+            </div>
+            <div id="dataset-pagination"></div>
+          </div>
+
+          <div style="width:100%; overflow-x:auto;">
+            <table class="custom-table" style="width:100%; border-collapse:collapse; font-size:13.5px;">
+              <thead>
+                <tr id="dataset-table-head" style="border-bottom:1px solid var(--border-subtle); text-align:left; color:var(--text-secondary); font-size:13px; font-weight:700;">
+                  <th>Sample ID</th>
+                  <th>mean_0_a</th>
+                  <th>mean_1_a</th>
+                  <th>mean_2_a</th>
+                  <th>mean_3_a</th>
+                  <th>stddev_0_a</th>
+                  <th>fft_0_b</th>
+                  <th>fft_1_b</th>
+                  <th>entropy0_a</th>
+                  <th>Ground Truth</th>
+                  <th>Inspect</th>
+                </tr>
+              </thead>
+              <tbody id="dataset-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card-clean" id="sample-inspector-box">
+          <div style="font-size:14px; color:var(--text-secondary); text-align:center; padding:16px;">
+            Click <strong>Predict ➔</strong> on any sample row above to evaluate its feature vector through the live ML engine.
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           TAB 10: RESEARCH EXPORT
+           ==================================================================== -->
+      <section class="dash-page-view" id="dash-research-export">
+        <div class="card-clean">
+          <div class="card-clean-header">
+            <div>
+              <h3 class="card-clean-title">Laboratory Research Export Console</h3>
+              <p class="card-clean-subtitle">Generate a comprehensive Markdown research document for project review and viva</p>
+            </div>
+            <button class="btn-primary" id="export-research-btn">Download Research Report</button>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; margin-top:16px;">
+            <div class="session-metric-cell">
+              <div class="session-metric-title">Model Type</div>
+              <div class="session-metric-val" style="font-size:17px;">Random Forest (120 Trees)</div>
+            </div>
+            <div class="session-metric-cell">
+              <div class="session-metric-title">Holdout Accuracy</div>
+              <div class="session-metric-val mono" style="font-size:17px; color:var(--accent-teal);">98.83%</div>
+            </div>
+            <div class="session-metric-cell">
+              <div class="session-metric-title">Macro F1 Score</div>
+              <div class="session-metric-val mono" style="font-size:17px;">0.9883</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+  </div> <!-- End .disha-main -->
+
+</div> <!-- End #app-view -->
+
+
+<!-- ==========================================================================
+     MODALS
+     ========================================================================== -->
+<!-- Why Modal -->
+<div class="disha-modal-overlay" id="why-modal">
+  <div class="disha-modal">
+    <div class="disha-modal-header">
+      <div class="font-heading" style="font-size:20px; font-weight:700;" id="why-modal-title">Why am I seeing this?</div>
+      <button class="disha-modal-close">×</button>
+    </div>
+    <div id="why-modal-body"></div>
+  </div>
+</div>
+
+<!-- Electrode Inspection Modal -->
+<div class="disha-modal-overlay" id="electrode-modal">
+  <div class="disha-modal">
+    <div class="disha-modal-header">
+      <div class="font-heading" style="font-size:20px; font-weight:700;" id="electrode-modal-title">Electrode Details</div>
+      <button class="disha-modal-close">×</button>
+    </div>
+    <div id="electrode-modal-body"></div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="js/api.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/eeg-stream.js"></script>
+<script src="js/career.js"></script>
+<script src="js/dataset-viewer.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

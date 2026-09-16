@@ -1,0 +1,101 @@
+{
+  "POSITIVE": {
+    "sample_count": 708,
+    "percentage": 33.21,
+    "top_distinguishing_features": {
+      "covmat_20_a": 5650.0883,
+      "covmat_0_a": 3720.2809,
+      "covmat_13_a": 3635.9028,
+      "covmat_8_a": 1516.6149,
+      "covmat_52_a": 1492.7756,
+      "covmat_78_a": 1065.9018,
+      "covmat_56_a": 974.8604,
+      "covmat_57_a": 885.5152,
+      "covmat_1_a": 872.7556,
+      "covmat_12_a": 872.7556
+    },
+    "mean_fft_power": 8.003,
+    "mean_entropy": 1.104,
+    "fft_profile": [
+      -1.07,
+      62.75,
+      -44.25,
+      -44.25,
+      62.75,
+      -4.14,
+      61.9,
+      -43.32
+    ],
+    "stress_association": "Low",
+    "valence_arousal": {
+      "valence": 0.85,
+      "arousal": 0.45
+    }
+  },
+  "NEGATIVE": {
+    "sample_count": 708,
+    "percentage": 33.21,
+    "top_distinguishing_features": {
+      "covmat_20_a": 18733.6875,
+      "covmat_0_a": 13029.6088,
+      "covmat_13_a": 12870.2527,
+      "covmat_52_a": 7293.1566,
+      "covmat_8_a": 4733.2667,
+      "covmat_65_a": 4508.9009,
+      "covmat_39_a": 4400.3347,
+      "covmat_56_a": 3761.6676,
+      "covmat_69_a": 2826.2278,
+      "covmat_1_a": 2733.5887
+    },
+    "mean_fft_power": 8.559,
+    "mean_entropy": 1.145,
+    "fft_profile": [
+      -274.93,
+      291.8,
+      -139.93,
+      -139.93,
+      291.8,
+      -201.88,
+      248.47,
+      -113.34
+    ],
+    "stress_association": "High",
+    "valence_arousal": {
+      "valence": -0.75,
+      "arousal": 0.78
+    }
+  },
+  "NEUTRAL": {
+    "sample_count": 716,
+    "percentage": 33.58,
+    "top_distinguishing_features": {
+      "covmat_20_a": 12937.4137,
+      "covmat_0_a": 9205.313,
+      "covmat_13_a": 9131.1727,
+      "covmat_52_a": 5735.5724,
+      "covmat_65_a": 4261.6142,
+      "covmat_39_a": 3874.56,
+      "covmat_8_a": 3180.7116,
+      "covmat_56_a": 2755.6697,
+      "covmat_69_a": 2118.7306,
+      "covmat_1_a": 1840.0416
+    },
+    "mean_fft_power": 28.253,
+    "mean_entropy": 3.049,
+    "fft_profile": [
+      140.1,
+      -0.09,
+      0.54,
+      0.54,
+      -0.09,
+      142.71,
+      -0.63,
+      -0.64
+    ],
+    "stress_association": "Moderate",
+    "valence_arousal": {
+      "valence": 0.05,
+      "arousal": 0.12
+    }
+  }
+}

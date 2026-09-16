@@ -1,0 +1,32 @@
+{
+  "by_class": {
+    "POSITIVE": {
+      "delta": 92.89,
+      "theta": 90.84,
+      "alpha": 92.07,
+      "beta": 92.48,
+      "gamma": 91.75
+    },
+    "NEGATIVE": {
+      "delta": 245.78,
+      "theta": 245.92,
+      "alpha": 245.48,
+      "beta": 245.18,
+      "gamma": 245.08
+    },
+    "NEUTRAL": {
+      "delta": 44.77,
+      "theta": 44.95,
+      "alpha": 44.95,
+      "beta": 44.99,
+      "gamma": 45.33
+    }
+  },
+  "overall": {
+    "delta": 127.5,
+    "theta": 126.93,
+    "alpha": 127.19,
+    "beta": 127.24,
+    "gamma": 127.08
+  }
+}

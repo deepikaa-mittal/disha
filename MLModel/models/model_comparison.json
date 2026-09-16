@@ -1,0 +1,74 @@
+{
+  "models": [
+    {
+      "id": "rf",
+      "name": "Random Forest Classifier",
+      "architecture": "Ensemble (120 Estimators, max_depth=16)",
+      "accuracy": 98.83,
+      "macro_f1": 0.9883,
+      "precision": 98.85,
+      "recall": 98.83,
+      "inference_latency_ms": 0.368,
+      "status": "Production Active",
+      "recommended": true
+    },
+    {
+      "id": "svm",
+      "name": "Support Vector Machine (LinearSVC)",
+      "architecture": "StandardScaler + Linear Margin (C=1.0)",
+      "accuracy": 97.42,
+      "macro_f1": 0.9741,
+      "precision": 97.45,
+      "recall": 97.42,
+      "inference_latency_ms": 0.412,
+      "status": "Benchmarked",
+      "recommended": false
+    },
+    {
+      "id": "pytorch",
+      "name": "PyTorch Neural Network (MLP)",
+      "architecture": "3-Layer Dense [2548 -> 256 -> 64 -> 3] + ReLU + Dropout(0.3)",
+      "accuracy": 97.42,
+      "macro_f1": 0.974,
+      "precision": 97.48,
+      "recall": 97.42,
+      "inference_latency_ms": 0.854,
+      "status": "Benchmarked",
+      "recommended": false
+    },
+    {
+      "id": "lr",
+      "name": "Logistic Regression (L2 Regularized)",
+      "architecture": "StandardScaler + Multinomial Logistic (C=1.0)",
+      "accuracy": 96.96,
+      "macro_f1": 0.9694,
+      "precision": 97.02,
+      "recall": 96.96,
+      "inference_latency_ms": 0.248,
+      "status": "Benchmarked",
+      "recommended": false
+    }
+  ],
+  "top_features_rf": {
+    "min_q_0_a": 0.01783828278507561,
+    "min_q_15_b": 0.016407632725417582,
+    "mean_0_b": 0.016022218802635116,
+    "mean_3_a": 0.015759212158288665,
+    "min_q_5_b": 0.015656720505357328,
+    "min_q_15_a": 0.01519330850062204,
+    "min_q_0_b": 0.015021117360492527,
+    "mean_d_12_b": 0.014240662702513633,
+    "min_q_5_a": 0.01398693065750784,
+    "mean_d_0_b2": 0.013643390467000268,
+    "mean_d_7_b": 0.013200030366532447,
+    "mean_3_b": 0.012770279536610231,
+    "min_0_b": 0.012307311327993004,
+    "mean_d_18_a": 0.01160773477047407,
+    "min_q_7_b": 0.011553873834868807
+  },
+  "metric_descriptions": {
+    "accuracy": "Percentage of correct emotion class predictions on 20% stratified holdout set (427 samples).",
+    "macro_f1": "Harmonic mean of precision and recall unweighted across POSITIVE, NEGATIVE, NEUTRAL.",
+    "latency": "Average single-sample inference time in milliseconds (wall-clock)."
+  }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>EEG Stream Test Client</title>
+<style>
+  body { font-family: system-ui, sans-serif; background: #111; color: #eee; padding: 24px; }
+  h1 { font-size: 18px; color: #9ad; }
+  .row { display: flex; gap: 24px; margin-bottom: 16px; }
+  .meter { background: #1c1c1c; border-radius: 8px; padding: 12px 20px; min-width: 140px; }
+  .meter .label { font-size: 12px; color: #999; text-transform: uppercase; }
+  .meter .value { font-size: 28px; font-weight: 700; }
+  .happy { color: #6fdc8c; }
+  .sad { color: #6fa8dc; }
+  .stress { color: #dc6f6f; }
+  #status { font-size: 13px; color: #999; margin-bottom: 12px; }
+  #log { font-family: monospace; font-size: 12px; white-space: pre-wrap; background: #1c1c1c;
+         padding: 12px; border-radius: 8px; max-height: 320px; overflow-y: auto; }
+</style>
+</head>
+<body>
+  <h1>EEG Stream Test Client</h1>
+  <div id="status">connecting to ws://localhost:5000/ws ...</div>
+  <div class="row">
+    <div class="meter"><div class="label">Happiness</div><div class="value happy" id="happiness">--</div></div>
+    <div class="meter"><div class="label">Sadness</div><div class="value sad" id="sadness">--</div></div>
+    <div class="meter"><div class="label">Anxiety / Stress</div><div class="value stress" id="stress">--</div></div>
+    <div class="meter"><div class="label">Predicted emotion</div><div class="value" id="emotion">--</div></div>
+  </div>
+  <div id="log"></div>
+
+  <script>
+    const statusEl = document.getElementById("status");
+    const logEl = document.getElementById("log");
+    const ws = new WebSocket("ws://localhost:5000/ws");
+
+    ws.onopen = () => { statusEl.textContent = "connected"; };
+    ws.onclose = () => { statusEl.textContent = "disconnected"; };
+    ws.onerror = (e) => { statusEl.textContent = "error (see console)"; console.error(e); };
+
+    ws.onmessage = (event) => {
+      const msg = JSON.parse(event.data);
+      document.getElementById("happiness").textContent = msg.happiness_index;
+      document.getElementById("sadness").textContent = msg.sadness_index;
+      document.getElementById("stress").textContent = msg.anxiety_stress_index;
+      document.getElementById("emotion").textContent = msg.predicted_emotion +
+        (msg.stressed ? " (stressed)" : "");
+
+      logEl.textContent = JSON.stringify(msg) + "\n" + logEl.textContent;
+    };
+  </script>
+</body>
+</html>
